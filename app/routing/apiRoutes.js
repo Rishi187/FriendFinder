@@ -7,18 +7,18 @@ module.exports = function (app) {
 
 
 	app.post('/api/friends', function(req, res){
-			//grabs the new friend's scores to compare with friends in friendList array
+			//grabs the new ballers scores to compare with friends in friendList array
 			var newFriendScores = req.body.scores;
 			var scoresArray = [];
 			var friendCount = 0;
 			var bestMatch = 0;
 		
-			//runs through all current friends in list
-			for(var i=0; i<friendList.length; i++){
+			//runs through all current ballers in list
+			for(var i=0; i<ballersData.length; i++){
 			  var scoresDiff = 0;
-			  //run through scores to compare friends
+			  //run through scores to compare ballers
 			  for(var j=0; j<newFriendScores.length; j++){
-				scoresDiff += (Math.abs(parseInt(friendList[i].scores[j]) - parseInt(newFriendScores[j])));
+				scoresDiff += (Math.abs(parseInt(ballersData[i].scores[j]) - parseInt(newFriendScores[j])));
 			  }
 		
 			  //push results into scoresArray
